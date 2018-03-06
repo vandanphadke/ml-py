@@ -1,12 +1,8 @@
 import numpy as np
+import utils
 
 X = np.round(np.random.rand(100, 3), 3)
 Y = 3 + X[:, 0] + 5*X[:, 1] + 3*X[:, 2]
-
-def add_ones_col(mat):
-    n,m = mat.shape
-    one = np.ones((n,1))
-    return np.hstack((one, mat))
 
 def solve_normal_eqn(X, y):
     Xnew = add_ones_col(X)
