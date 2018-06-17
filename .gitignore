@@ -22,3 +22,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# pyc files
+*.pyc

@@ -5,7 +5,7 @@ X = np.round(np.random.rand(100, 3), 3)
 Y = 3 + X[:, 0] + 5*X[:, 1] + 3*X[:, 2]
 
 def solve_normal_eqn(X, y):
-    Xnew = add_ones_col(X)
+    Xnew = utils.add_ones_col(X)
     return np.matmul(np.linalg.inv(np.matmul(Xnew.transpose(), Xnew)),
                      np.matmul(Xnew.transpose(), y))
 
@@ -16,7 +16,7 @@ def compute_cost(X, y, theta):
     return (1.0/(2.0*m))*(sq_errors.sum())
 
 def solve_gradient_descent(X, y, alpha=0.01, n_iters=5000):
-    X = add_ones_col(X)
+    X = utils.add_ones_col(X)
     m,n = X.shape
     theta = np.random.rand(n, 1)
     epsilon = 100
